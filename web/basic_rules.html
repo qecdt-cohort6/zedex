@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+
+
+    .w3-bar, h1, button {
+        font-family: "Montserrat", sans-serif
+    }
+
+    .fa-anchor, .fa-coffee {
+        font-size: 200px
+    }
+
+    .vertical-menu {
+        margin: auto;
+        width: 400px;
+        height: 300px;
+        overflow-y: auto; /* Set a width if you like */
+    }
+
+
+    .vertical-menu a {
+        background-color: #eee; /* Grey background color */
+        color: black; /* Black text color */
+        display: block; /* Make the links appear below each other */
+        padding: 12px; /* Add some padding */
+        text-decoration: none; /* Remove underline from links */
+    }
+
+
+        .vertical-menu a:hover {
+            background-color: #ccc; /* Dark grey background on mouse-over */
+        }
+
+
+        .vertical-menu a.active {
+            background-color: #aaa; /* Add a green color to the "active/current" link */
+            color: white;
+        }
+
+
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-red w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Zedex</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#warning" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"> Warning</a>
+    <a href="#introduction" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Introduction</a>
+    <a href="#rules" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">What are the rules?</a> 
+    <a href="#fun" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Can I play the game now?</a> 
+    <a href="#Tutorial" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Tutorial Level</a> 
+    <a href="#designers" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Designers</a>
+    <a href="#Acknowledgements" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"> Acknowledgements</a>
+    <a href="#FurtherInfo" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"> Further Information</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-red w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Company Name</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+
+
+
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="title">
+    <h1 class="w3-jumbo"><b>Zedex </b></h1>
+   
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+  
+  <div class="row">
+        <!-- <div class="column side" style="background-color:#fff;"></div> -->
+        <div class="column middle" style="background-color:#fff;">
+            <div class="nav">
+                <div class="vertical-menu">
+                    <a href="#" class="active">Level selection</a>
+                    <a href="ghz_prototype.html">GHZ level</a>
+                    <a href="level_Random10.html">Random clifford level1</a>
+                    <a href="level_Random25.html">Random clifford level2</a>
+                    <a href="level_Random50.html">Random clifford level3</a>
+                    <a href="level_QEC3.html">Quantum error correction 3</a>
+                    <a href="level_QEC7.html">Quantum error correction 7</a>
+                    <a href="level_QFT1.html">QFT1</a>
+                    <a href="level_QFT2.html">QFT2</a>
+                    <a href="level_QFT3.html">QFT3</a>
+                    <a href="level_QFT4.html">QFT4</a>
+                    <a href="level_QFT1.html">QFT5</a>
+                    <a href="level_QFT2.html">QFT6</a>
+                    <a href="level_QFT3.html">QFT7</a>
+                    <a href="level_QFT4.html">QFT8</a>
+                    <a href="Level_GSA2_0.html">Grover search 1</a>
+                    <a href="Level_GSA2_1.html">Grover search 2</a>
+                    <a href="Level_GSA2_2.html">Grover search 3</a>
+                    <a href="Level_GSA2_3.html">Grover search 4</a>
+                    <a href="Level_GSA3_0.html">Grover search 4</a>
+                    <a href="Level_GSA3_1.html">Grover search 5</a>
+                    <a href="Level_GSA3_2.html">Grover search 6</a>
+                    <a href="Level_GSA3_3.html">Grover search 7</a>
+                    <a href="Level_GSA3_4.html">Grover search 8</a>
+                    <a href="Level_GSA3_5.html">Grover search 9</a>
+                    <a href="Level_GSA3_6.html">Grover search 10</a>
+                    <a href="Level_GSA3_7.html">Grover search 11</a>
+                
+                </div> -->
+            </div>
+        </div>
+        <!-- <div class="column side" style="background-color:#fff;"></div> -->
+    </div>
+  
+       <!-- Services -->
+  <div class="w3-container" id="warning" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Warning:</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    
+     <h1>This game is still in the alpha stage of development. There areas that need significant improvement, but we hope this serves as a nice proof of principle. Enjoy!</h1>
+  </div>
+  
+    <!-- Services -->
+  <div class="w3-container" id="introduction" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Introduction</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    
+      <h1>What is the game?</h1>
+      <p>Zedex is a quantum game that utilises the ZX calculus as a means for players to rewrite and reconfigure quantum circuits.  A circuit can be represented as a ZX graph object containing nodes (called spiders) and connecting edges.It has been shown that the ZX calculus is universal and complete for pure qubit quantum information, therefore a ZX object is a valid representation of a quantum circuit.  The ZX calculus comes equipped with a set of rewrite rules which allows for conversions between equivalent graphs, changing the makeup of the circuit’s gates while still being equivalent to the overall unitary operation.  Zedex utilises a subset of these rewrite rules to allow the user to manipulate the ZX object with the aim of simplifying a quantum circuit and improving its mapping to an underlying architecture.  The ZX rules can be performed on the graph using intuitive clicks and movements of the mouse and the spider nodes can be dragged around as the player wishes.  Users are then scored according to how well they map the circuit to the architecture and, where possible, are presented with an updated circuit to view the result of their manipulations. </p>
+
+    
+    
+    
+    
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding" id="rules">
+   <h1 class="w3-xxxlarge w3-text-red"><b>What are the rules?</b></h1>
+    <div class="w3-main">
+    
+      <h1>The Spider Identity Rule:</h1>
+      <img src="SpiderIdentity2.png" style="width:60%" onclick="onClick(this)" alt="Spider Identity Rule">
+      <figcaption>If  a  spider,  with  no  phase,  is  connected  in  a  diagram  with  only  two  wires  connected,  then  it  can  be treated as an identity.  This rule is implemented by a single click on the spider.  This can also be used to place a spider with 0 phase onto any black wire within a diagram. </figcaption>
+      
+      <h1>The Colour Change Rule:</h1>
+      <img src="ColourChange2.png" style="width:60%" onclick="onClick(this)" alt="Colour Change Rule">
+      <figcaption>This  is  implemented  by  double  clicking  on  a  spider  and  has  two  effects.   The  selected  node  colour  is swapped and all black wires connected to the spider are replaced with a blue wires and vice versa.</figcaption>
+      
+      
+      <h1>The Node To Spider Rule:</h1>
+      <img src="NodeToSpider3.png" style="width:60%" onclick="onClick(this)" alt="Node to Spider Rule">
+      <figcaption>This rule is implemented by a single click on the starting node which produces a red spider.</figcaption>
+      
+      <h1>The Spider Fusion Rule:</h1>
+      <img src="SpiderFusion2.png" style="width:60%" onclick="onClick(this)" alt="Spider Fusion Rule ">
+      <figcaption>When two spiders of the same colour are directly connected by a black wire they can be fused.  The Spider Fusion rule is applied by dragging one of the spiders onto the other.</figcaption>
+      
+      <h1>The Spider Slice Rule:</h1>
+      <img src="SpiderSlice2.png" style="width:60%" onclick="onClick(this)" alt="Spider Slice Rule">
+      <figcaption> The inverse of the Spider Fusion is Slicing.  This is applied by drawing a line across the spider, which produces two spiders of the same colour connected by a black wire.  The sum of the phases of the two new spiders equal the phase of the initial spider. </figcaption>
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+  
+  
+  
+  <!-- Services -->
+  <div class="w3-container" id="fun" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Can I play the game now?</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    
+      <h1>YES!</h1>
+      <p>You now have all the tools you need to go and play the game! Feel free to go and have a play round, and get a feel for the game.
+      If you wish to understand optimal strategies for playing the game then have a read of the 'Tutorial Level'. Enjoy!
+      </p>
+    
+    
+    
+  </div>
+  
+
+  <!-- Services -->
+  <div class="w3-container" id="Tutorial" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Tutorial Level</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    
+      <h1>Optimising a GHZ circuit:</h1>
+      <img src="Line1.png" style="width:70%" onclick="onClick(this)" alt="Spider Identity Rule">
+      <figcaption> Here is one example of how a level in our game can be completed, which shows the GHZ example. The level starts in (a) with the basic GHZ state. This Figure shows that the initial ZX graph would require a large number of swap gates to be implemented in its current form. As this circuit takes in a set of qubits in a specified state, the qubit to spider rule can be applied to pull four red spiders out of four of the nodes, as shown (b). From this the four red spiders can then by fused with the other red spiders that they connect to via the spider fusion rule, as shown in (c). Now that the red spiders only have two wires connected and a phase of 0 Rad they can be treated as identities and the spider identity rule can be applied. This gives a graph as shown in (d).</figcaption>
+      <img src="Line2.png" style="width:70%" onclick="onClick(this)" alt="Spider Identity Rule">
+      <figcaption>This state can then be moved to better fit the architecture. By applying the Qubit to Spider rule the node of qubit 0 can be changed to a spider and then be converted back to a node at a position that better suits the architecture, as shown in (e) and (f). Using the Spider Fusion rule the five green spiders can be fused to produce the diagram in (g). By applying two slices on the single green spider in (g) two more green spiders can be made in the positions shown in (h). These slices were done such to slice along the path of qubit 2 and to produce green spiders that spread out in a column.</figcaption>
+      <img src="Line3.png" style="width:70%" onclick="onClick(this)" alt="Spider Identity Rule">
+      <figcaption>The central green spider can then be further sliced to separate this column of spiders into two columns of two spiders.  Each of these two new spiders connect to two output nodes as shown in (i). The Spider Identity rule can then be used to place four red spiders into the diagram, in such a way that the new graph optimally fits the architecture. This can be seen in (j) and (k). The Spider Fusion rule can then be used to perform a slice on all of the red spiders in order reconnect the circuit back to the nodes, as shown in Figure (l). This then produces the circuit that optimally fits the architecture, but only for the specific input state. The output of this circuit and the initial circuit may differ if any other input state is used.</figcaption>
+    
+    
+    
+    
+    
+  </div>
+  
+  <!-- Designers -->
+  <div class="w3-container" id="designers" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Designers.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p><b>Our designers are thoughtfully chosen, meeting tough selection criteria such as; "Available"</b>:</p>
+  </div>
+
+  <!-- The Team -->
+  <div class="w3-row-padding w3-grayscale">
+  
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="Quinn.png" alt="Quinn" style="width:100%">
+        <div class="w3-container">
+          <h3>Quinn Palmer</h3>
+          <p class="w3-opacity">CEO & Founder</p>
+          <p>"We miss every shot we do and don't take."</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="Matt.png" alt="Matt" style="width:100%">
+        <div class="w3-container">
+          <h3>Matthew Stafford</h3>
+          <p class="w3-opacity">Theory</p>
+          <p>"Whats a Python?"</p>
+        </div>
+      </div>
+    </div>
+      
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="Seb.png" alt="Seb" style="width:100%">
+        <div class="w3-container">
+          <h3>Seb Currie</h3>
+          <p class="w3-opacity">Tea and coffee.</p>
+          <p>"At least we're not called Squamble"</p>
+        </div>
+      </div>
+    </div> 
+      
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="marcus.png" alt="Marcus" style="width:100%">
+        <div class="w3-container">
+          <h3>Marcus Clarke</h3>
+          <p class="w3-opacity">Level Design</p>
+          <p>"Look at my diagrams"</p>
+        </div>
+      </div>
+    </div>
+    
+    
+     <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="Alex.png" alt="Alex" style="width:100%">
+        <div class="w3-container">
+          <h3>Alex Belsley</h3>
+          <p class="w3-opacity"> Tri-national. </p>
+          <p>"It's not going to work like that."</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="Tasos.png" alt="Tasos" style="width:100%">
+        <div class="w3-container">
+          <h3>Tasos Fasoulakis</h3>
+          <p class="w3-opacity"> Olive oil procurement officer. </p>
+          <p>"Coop? *hand windmill*"</p>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+   <!-- Services -->
+  <div class="w3-container" id="Acknowledgements" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Acknowledments</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    
+      <h1>pyZX </h1>
+      <p> We make use of the open source pyZX library in order to implement many of the features of the game. We owe them a huge debt of thanks. A special thanks to John Van Der Wetering who took the time to talk us through some issues we've had.
+      </p>
+       <h1> Dr Chrys Woods</h1>
+      <p> For valueable coding advice without which there would be no finished product.
+      </p>
+        <h1>W3 Schools  </h1>
+      <p> For the use of CSS templates.
+      </p>
+    
+     <!-- Services -->
+  <div class="w3-container" id="FurtherInfo" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-red"><b>Further Information</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    
+      <p> If you would like to take a deep dive into the physics theory behind our game, please feel free to take a dive into the report below. Zedex is described in detail in Section 4.  </p>
+      <embed src="Cohort_project.pdf" width="100%" height="800" type="application/pdf">
+  </div>
+    
+  </div>
+<!-- End page content -->
+</div>
+
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></p></div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>

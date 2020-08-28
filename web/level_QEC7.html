@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+    <meta charset="utf-8">
+    <style> body { font-family: sans-serif; }
+.pyzx_graph_div {
+  zoom:1;
+  margin: 10px 50px 20px;
+  width: 100%;
+  height: 30%;
+  position:relative;
+}
+.opt_circ {
+  zoom: 0.35;
+  font-size: 15pt;
+  float: right;
+  position:relative;
+}
+.div3 {
+  margin: auto;
+  text-align: center;
+  width: 10%;
+  border: 3px solid red;
+  font-size: 10px;
+  position:relative;
+}
+.div5 {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  border: 3px solid red;
+  font-size: 10px;
+  position:relative;
+}
+.org_circ {
+  zoom: 0.35;
+  float:left;
+  position:relative;
+}
+.title_box {
+  text-align: center;
+  width: 100%;
+  height:4%;
+  border: 3px solid green;
+  font-size: 20px;
+  position: relative;
+}
+body{width: 95%;height: 95%;}
+    </style>
+    <body>
+        <div class="title_box"><p>Zedex: Pre-Alpha testing</p></div>
+        <div class="div3" id="score"></div>
+        <div class="div5"  id="stats"></div>
+        <div  class="pyzx_graph_div"  id="graph-output-1" ></div>
+        <div class="opt_circ" title="Optimised Circuit" id="circuit"></div>
+        <div  class="org_circ" style="float:left" title="Original Circuit"  id="old_circuit"></div>
+    <script type="text/javascript" src="https://unpkg.com/quantum-circuit"></script>
+    <script src="require.js"></script>
+    <!--<script>window.languagePluginUrl = "https://de-luxham.github.io/web/";</script>-->
+    
+    <script type="text/javascript" src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
+    
+    <script type="text/javascript">
+    
+     require.config({
+            paths: {
+                    "d3": "d3.v4.min",
+                    "pyzx": "pyzx",
+                    "pyodid": "pyodide" //This is a CDN and could be unstable, long term should be changed to local files pyodide.js
+                    }
+            });require(['pyzx'], function(pyzx) {
+            pyzx.showGraph('#graph-output-1',
+            JSON.parse('{"nodes": [{"name": "0", "x": 50, "y": 100, "t": 0, "phase": 0}, {"name": "1", "x": 50, "y": 150, "t": 0, "phase": 0}, {"name": "2", "x": 50, "y": 200, "t": 0, "phase": 0}, {"name": "3", "x": 50, "y": 250, "t": 0, "phase": 0}, {"name": "4", "x": 50, "y": 300, "t": 0, "phase": 0}, {"name": "5", "x": 50, "y": 350, "t": 0, "phase": 0}, {"name": "6", "x": 50, "y": 400, "t": 0, "phase": 0}, {"name": "7", "x": 50, "y": 450, "t": 0, "phase": 0}, {"name": "8", "x": 50, "y": 500, "t": 0, "phase": 0}, {"name": "9", "x": 50, "y": 550, "t": 0, "phase": 0}, {"name": "10", "x": 100, "y": 450, "t": 2, "phase": 0}, {"name": "11", "x": 100, "y": 100, "t": 1, "phase": 0}, {"name": "12", "x": 100, "y": 500, "t": 2, "phase": 0}, {"name": "13", "x": 100, "y": 150, "t": 1, "phase": 0}, {"name": "14", "x": 100, "y": 550, "t": 2, "phase": 0}, {"name": "15", "x": 100, "y": 250, "t": 1, "phase": 0}, {"name": "16", "x": 150, "y": 450, "t": 2, "phase": 0}, {"name": "17", "x": 150, "y": 200, "t": 1, "phase": 0}, {"name": "18", "x": 200, "y": 450, "t": 2, "phase": 0}, {"name": "19", "x": 200, "y": 300, "t": 1, "phase": 0}, {"name": "20", "x": 200, "y": 500, "t": 2, "phase": 0}, {"name": "21", "x": 200, "y": 200, "t": 1, "phase": 0}, {"name": "22", "x": 250, "y": 450, "t": 2, "phase": 0}, {"name": "23", "x": 250, "y": 400, "t": 1, "phase": 0}, {"name": "24", "x": 250, "y": 500, "t": 2, "phase": 0}, {"name": "25", "x": 250, "y": 350, "t": 1, "phase": 0}, {"name": "26", "x": 250, "y": 550, "t": 2, "phase": 0}, {"name": "27", "x": 250, "y": 300, "t": 1, "phase": 0}, {"name": "28", "x": 300, "y": 500, "t": 2, "phase": 0}, {"name": "29", "x": 300, "y": 400, "t": 1, "phase": 0}, {"name": "30", "x": 300, "y": 550, "t": 2, "phase": 0}, {"name": "31", "x": 300, "y": 350, "t": 1, "phase": 0}, {"name": "32", "x": 350, "y": 550, "t": 2, "phase": 0}, {"name": "33", "x": 350, "y": 400, "t": 1, "phase": 0}, {"name": "34", "x": 400, "y": 100, "t": 0, "phase": 0}, {"name": "35", "x": 400, "y": 150, "t": 0, "phase": 0}, {"name": "36", "x": 400, "y": 200, "t": 0, "phase": 0}, {"name": "37", "x": 400, "y": 250, "t": 0, "phase": 0}, {"name": "38", "x": 400, "y": 300, "t": 0, "phase": 0}, {"name": "39", "x": 400, "y": 350, "t": 0, "phase": 0}, {"name": "40", "x": 400, "y": 400, "t": 0, "phase": 0}, {"name": "41", "x": 400, "y": 450, "t": 0, "phase": 0}, {"name": "42", "x": 400, "y": 500, "t": 0, "phase": 0}, {"name": "43", "x": 400, "y": 550, "t": 0, "phase": 0}], "links": [{"source": "0", "target": "11", "t": 1}, {"source": "1", "target": "13", "t": 1}, {"source": "2", "target": "17", "t": 1}, {"source": "3", "target": "15", "t": 1}, {"source": "4", "target": "19", "t": 1}, {"source": "5", "target": "25", "t": 1}, {"source": "6", "target": "23", "t": 1}, {"source": "7", "target": "10", "t": 1}, {"source": "8", "target": "12", "t": 1}, {"source": "9", "target": "14", "t": 1}, {"source": "10", "target": "11", "t": 1}, {"source": "10", "target": "16", "t": 1}, {"source": "11", "target": "34", "t": 1}, {"source": "12", "target": "13", "t": 1}, {"source": "12", "target": "20", "t": 1}, {"source": "13", "target": "35", "t": 1}, {"source": "14", "target": "15", "t": 1}, {"source": "14", "target": "26", "t": 1}, {"source": "15", "target": "37", "t": 1}, {"source": "16", "target": "17", "t": 1}, {"source": "16", "target": "18", "t": 1}, {"source": "17", "target": "21", "t": 1}, {"source": "18", "target": "19", "t": 1}, {"source": "18", "target": "22", "t": 1}, {"source": "19", "target": "27", "t": 1}, {"source": "20", "target": "21", "t": 1}, {"source": "20", "target": "24", "t": 1}, {"source": "21", "target": "36", "t": 1}, {"source": "22", "target": "23", "t": 1}, {"source": "22", "target": "41", "t": 1}, {"source": "23", "target": "29", "t": 1}, {"source": "24", "target": "25", "t": 1}, {"source": "24", "target": "28", "t": 1}, {"source": "25", "target": "31", "t": 1}, {"source": "26", "target": "27", "t": 1}, {"source": "26", "target": "30", "t": 1}, {"source": "27", "target": "38", "t": 1}, {"source": "28", "target": "29", "t": 1}, {"source": "28", "target": "42", "t": 1}, {"source": "29", "target": "33", "t": 1}, {"source": "30", "target": "31", "t": 1}, {"source": "30", "target": "32", "t": 1}, {"source": "31", "target": "39", "t": 1}, {"source": "32", "target": "33", "t": 1}, {"source": "32", "target": "43", "t": 1}, {"source": "33", "target": "40", "t": 1}]}'), 450, 650, 10.0 ,JSON.parse('{"connections": [{"source": 9, "target": 3, "fidelity": 0.02366}, {"source": 3, "target": 2, "fidelity": 0.01669}, {"source": 2, "target": 1, "fidelity": 0.02899}, {"source": 1, "target": 0, "fidelity": 0.05361}, {"source": 9, "target": 8, "fidelity": 0.07133}, {"source": 3, "target": 4, "fidelity": 0.04214}, {"source": 2, "target": 5, "fidelity": 0.0396}, {"source": 1, "target": 7, "fidelity": 0.03976}, {"source": 0, "target": 6, "fidelity": 0.0648}, {"source": 6, "target": 7, "fidelity": 0.0516}, {"source": 7, "target": 5, "fidelity": 0.04849}, {"source": 5, "target": 4, "fidelity": 0.03428}, {"source": 4, "target": 8, "fidelity": 0.02444}]}') ,`OPENQASM 2.0;
+include "qelib1.inc";
+qreg q[10];
+cx q[0], q[7];
+cx q[1], q[8];
+cx q[3], q[9];
+cx q[2], q[7];
+cx q[4], q[7];
+cx q[2], q[8];
+cx q[6], q[7];
+cx q[5], q[8];
+cx q[4], q[9];
+cx q[6], q[8];
+cx q[5], q[9];
+cx q[6], q[9];
+`);
+        });
+        </script>

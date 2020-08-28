@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+    <meta charset="utf-8">
+    <style> body { font-family: sans-serif; }
+.pyzx_graph_div {
+  zoom:1;
+  margin: 10px 50px 20px;
+  width: 100%;
+  height: 30%;
+  position:relative;
+}
+.opt_circ {
+  zoom: 0.35;
+  font-size: 15pt;
+  float: right;
+  position:relative;
+}
+.div3 {
+  margin: auto;
+  text-align: center;
+  width: 10%;
+  border: 3px solid red;
+  font-size: 10px;
+  position:relative;
+}
+.div5 {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  border: 3px solid red;
+  font-size: 10px;
+  position:relative;
+}
+.org_circ {
+  zoom: 0.35;
+  float:left;
+  position:relative;
+}
+.title_box {
+  text-align: center;
+  width: 100%;
+  height:4%;
+  border: 3px solid green;
+  font-size: 20px;
+  position: relative;
+}
+body{width: 95%;height: 95%;}
+    </style>
+    <body>
+        <div class="title_box"><p>Zedex: Pre-Alpha testing</p></div>
+        <div class="div3" id="score"></div>
+        <div class="div5"  id="stats"></div>
+        <div  class="pyzx_graph_div"  id="graph-output-1" ></div>
+        <div class="opt_circ" title="Optimised Circuit" id="circuit"></div>
+        <div  class="org_circ" style="float:left" title="Original Circuit"  id="old_circuit"></div>
+    <script type="text/javascript" src="https://unpkg.com/quantum-circuit"></script>
+    <script src="require.js"></script>
+    <!--<script>window.languagePluginUrl = "https://de-luxham.github.io/web/";</script>-->
+    
+    <script type="text/javascript" src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
+    
+    <script type="text/javascript">
+    
+     require.config({
+            paths: {
+                    "d3": "d3.v4.min",
+                    "pyzx": "pyzx",
+                    "pyodid": "pyodide" //This is a CDN and could be unstable, long term should be changed to local files pyodide.js
+                    }
+            });require(['pyzx'], function(pyzx) {
+            pyzx.showGraph('#graph-output-1',
+            JSON.parse('{"nodes": [{"name": "0", "x": 50, "y": 100, "t": 0, "phase": 0}, {"name": "1", "x": 100, "y": 100, "t": 1, "phase": 0}, {"name": "2", "x": 150, "y": 100, "t": 0, "phase": 0}], "links": [{"source": "0", "target": "1", "t": 2}, {"source": "1", "target": "2", "t": 1}]}'), 200, 200, 10.0 ,JSON.parse('{"connections": []}') ,`OPENQASM 2.0;
+include "qelib1.inc";
+qreg q[1];
+h q[0];
+`);
+        });
+        </script>

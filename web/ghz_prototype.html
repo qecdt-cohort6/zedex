@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+    <meta charset="utf-8">
+    <style> body { font-family: sans-serif; }
+.div1 {
+  zoom:1;
+  margin: -4% 0% 0% 20%;
+  width: 100%;
+  height: 30%;
+  position:relative;
+}
+.circuit_container{
+    margin: 0% 0% 0% 0%
+    width:100%
+    position:relative;
+}
+.div2 {
+  zoom: 0.4;
+  margin: -7%  0% 0% 0%;
+  width: 50%;
+  height: 8%;
+  title:Optimised Circuit
+  text-align: right;
+  font-size: 15pt
+  position:relative;
+}
+.div3 {
+  margin: auto;
+  text-align: center;
+  width: 10%;
+  border: 3px solid red;
+  font-size: 10px;
+  position:relative;
+}
+.div5 {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  border: 3px solid red;
+  font-size: 10px;
+  position:relative;
+}
+.div4 {
+  zoom: 0.4;
+  margin: -7% 0px 0px 0px;
+  width: 50%;
+  height:8%;
+  text-align: left;
+  font-size: 15pt
+  position:relative;
+}
+.title_box {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+  height:7%;
+  border: 3px solid green;
+  font-size: 20px;
+  position: relative;
+}
+.label{
+  margin: -10% 0% 0% 0%;
+  text-align: left;
+  width: 20%;
+  height:1%;
+  font-size: 15px;
+  position: relative;
+}
+.label1{
+  margin: -10% 30% 0% 0% ;
+  text-align: right;
+  width: 20%;
+  height:1%;
+  font-size: 15px;
+  position: relative;
+}
+.container {
+  width: 100%
+}
+    </style>
+    <body>
+    <div class="container">
+        <div class="title_box">
+        <p>Zedex: Pre-Alpha testing</p>
+      </div>
+      <div class="div3" id="score"></div>
+      <div class="div5"  id="stats"></div>
+      <div  class="div1"   id="graph-output-1" ></div>
+      <div class="circuit_container">
+      <div  class="label1" style="float:right" ><p>Optimised Circuit:</p></div>
+        <div class="div2" style="float:right" title="Optimised Circuit" id="circuit"></div>
+        <div  class="label" style="float:left" ><p>Original Circuit:</p></div>
+        <div  class="div4" style="float:left" title="Original Circuit"  id="old_circuit"></div>
+        </div>
+  </div>
+    <script type="text/javascript" src="https://unpkg.com/quantum-circuit"></script>
+    <script src="require.js"></script>
+    <!--<script>window.languagePluginUrl = "https://de-luxham.github.io/web/";</script>-->
+    
+    <script type="text/javascript" src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
+    
+    <script type="text/javascript">
+    
+     require.config({
+            paths: {
+                    "d3": "d3.v4.min",
+                    "pyzx": "pyzx",
+                    "pyodid": "pyodide" //This is a CDN and could be unstable, long term should be changed to local files pyodide.js
+                    }
+            });require(['pyzx'], function(pyzx) {
+            pyzx.showGraph('#graph-output-1',
+            JSON.parse('{"nodes": [{"name": "0", "x": 50, "y": 100, "t": 0, "phase": ""}, {"name": "1", "x": 50, "y": 150, "t": 0, "phase": ""}, {"name": "2", "x": 50, "y": 200, "t": 0, "phase": ""}, {"name": "3", "x": 50, "y": 250, "t": 0, "phase": ""}, {"name": "4", "x": 50, "y": 300, "t": 0, "phase": ""}, {"name": "5", "x": 100, "y": 100, "t": 1, "phase": ""}, {"name": "6", "x": 150, "y": 150, "t": 2, "phase": ""}, {"name": "7", "x": 150, "y": 100, "t": 1, "phase": ""}, {"name": "8", "x": 200, "y": 200, "t": 2, "phase": ""}, {"name": "9", "x": 200, "y": 100, "t": 1, "phase": ""}, {"name": "10", "x": 250, "y": 250, "t": 2, "phase": ""}, {"name": "11", "x": 250, "y": 100, "t": 1, "phase": ""}, {"name": "12", "x": 300, "y": 300, "t": 2, "phase": ""}, {"name": "13", "x": 300, "y": 100, "t": 1, "phase": ""}, {"name": "14", "x": 350, "y": 100, "t": 0, "phase": ""}, {"name": "15", "x": 350, "y": 150, "t": 0, "phase": ""}, {"name": "16", "x": 350, "y": 200, "t": 0, "phase": ""}, {"name": "17", "x": 350, "y": 250, "t": 0, "phase": ""}, {"name": "18", "x": 350, "y": 300, "t": 0, "phase": ""}], "links": [{"source": "0", "target": "5", "t": 2}, {"source": "1", "target": "6", "t": 1}, {"source": "2", "target": "8", "t": 1}, {"source": "3", "target": "10", "t": 1}, {"source": "4", "target": "12", "t": 1}, {"source": "5", "target": "7", "t": 1}, {"source": "6", "target": "7", "t": 1}, {"source": "6", "target": "15", "t": 1}, {"source": "7", "target": "9", "t": 1}, {"source": "8", "target": "9", "t": 1}, {"source": "8", "target": "16", "t": 1}, {"source": "9", "target": "11", "t": 1}, {"source": "10", "target": "11", "t": 1}, {"source": "10", "target": "17", "t": 1}, {"source": "11", "target": "13", "t": 1}, {"source": "12", "target": "13", "t": 1}, {"source": "12", "target": "18", "t": 1}, {"source": "13", "target": "14", "t": 1}]}'), 400, 400, 10.0 ,JSON.parse('{"connections": [{"source": 0, "target": 1, "fidelity": 0.05361}, {"source": 1, "target": 2, "fidelity": 0.03976}, {"source": 2, "target": 3, "fidelity": 0.0648}, {"source": 3, "target": 4, "fidelity": 0.0516}]}') ,`OPENQASM 2.0;
+include "qelib1.inc";
+qreg q[5];
+h q[0];
+cx q[0], q[1];
+cx q[0], q[2];
+cx q[0], q[3];
+cx q[0], q[4];
+`);
+        });
+        </script>

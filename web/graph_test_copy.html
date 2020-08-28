@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <meta charset="utf-8">
+    <style> body { font-family: sans-serif; }
+.div1 {
+  margin: auto;
+  width: 1000px;
+  height: 500px;
+}
+.div2 {
+  margin: auto;
+  width: 500px;
+  height: 200px;
+}
+.div3 {
+  margin: auto;
+  width: 500px;
+  height: 200px;
+}
+    </style>
+    <body>
+    <div class="div2" id="circuit"></div>
+    <div class="div3" id="score"></div>
+    <div  class="div1" style="overflow:auto"  id="graph-output-1" ></div>
+    <script type="text/javascript" src="https://unpkg.com/quantum-circuit"></script>
+    <script src="require.js"></script>
+    <!--<script>window.languagePluginUrl = "https://de-luxham.github.io/web/";</script>-->
+    
+    <script type="text/javascript" src="https://pyodide-cdn2.iodide.io/v0.15.0/full/pyodide.js"></script>
+    
+    <script type="text/javascript">
+    
+     require.config({
+            paths: {
+                    "d3": "d3.v4.min",
+                    "pyzx": "pyzx",
+                    "pyodid": "pyodide" //This is a CDN and could be unstable, long term should be changed to local files pyodide.js
+                    }
+            });
+                require(['pyzx'], function(pyzx) {
+            pyzx.showGraph('#graph-output-1',
+            JSON.parse('{"nodes": [{"name": "0", "x": 50, "y": 100, "t": 0, "phase": ""}, {"name": "1", "x": 50, "y": 150, "t": 0, "phase": ""}, {"name": "2", "x": 50, "y": 200, "t": 0, "phase": ""}, {"name": "3", "x": 100, "y": 100, "t": 1, "phase": ""}, {"name": "4", "x": 100, "y": 150, "t": 1, "phase": ""}, {"name": "5", "x": 100, "y": 200, "t": 1, "phase": ""}, {"name": "6", "x": 150, "y": 200, "t": 1, "phase": "\u03c0"}, {"name": "7", "x": 150, "y": 150, "t": 2, "phase": "3\u03c0/2"}, {"name": "8", "x": 200, "y": 150, "t": 1, "phase": "\u03c0"}, {"name": "9", "x": 200, "y": 200, "t": 2, "phase": "3\u03c0/2"}, {"name": "10", "x": 250, "y": 150, "t": 1, "phase": "3\u03c0/2"}, {"name": "11", "x": 250, "y": 100, "t": 2, "phase": ""}, {"name": "12", "x": 300, "y": 150, "t": 1, "phase": "\u03c0/2"}, {"name": "13", "x": 300, "y": 100, "t": 2, "phase": ""}, {"name": "14", "x": 350, "y": 100, "t": 1, "phase": ""}, {"name": "15", "x": 350, "y": 150, "t": 1, "phase": ""}, {"name": "16", "x": 350, "y": 200, "t": 1, "phase": ""}, {"name": "17", "x": 400, "y": 100, "t": 0, "phase": ""}, {"name": "18", "x": 400, "y": 150, "t": 0, "phase": ""}, {"name": "19", "x": 400, "y": 200, "t": 0, "phase": ""}], "links": [{"source": "0", "target": "3", "t": 1}, {"source": "1", "target": "4", "t": 1}, {"source": "2", "target": "5", "t": 1}, {"source": "3", "target": "11", "t": 1}, {"source": "4", "target": "7", "t": 1}, {"source": "5", "target": "6", "t": 1}, {"source": "6", "target": "9", "t": 1}, {"source": "7", "target": "8", "t": 2}, {"source": "8", "target": "10", "t": 1}, {"source": "9", "target": "16", "t": 1}, {"source": "10", "target": "12", "t": 1}, {"source": "11", "target": "13", "t": 2}, {"source": "12", "target": "15", "t": 1}, {"source": "13", "target": "14", "t": 1}, {"source": "14", "target": "17", "t": 1}, {"source": "15", "target": "18", "t": 1}, {"source": "16", "target": "19", "t": 1}]}'), 450, 300, 10.0);
+        });
+        </script>
